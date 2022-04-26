@@ -1,0 +1,25 @@
+function output = Thomas_algo(A,d,n)
+    %A is the nxn tridiagonal matrix 
+    % d is the RHS vector of dimensions nx1
+    i=1;
+    output=zeros(n,1);
+    while(i<n)
+        temp=A(i,i);
+        A(i,:)=A(i,:)./temp;
+        d(i,1)=d(i,1)/temp;
+        temp=A(i+1,i);
+        A(i+1,:)=A(i+1,:)-(A(i,:).*temp);
+        d(i+1,1)=d(i+1,1)-(d(i,1)*temp);
+        i=i+1;
+    end
+    temp=A(n,n);
+    A(n,:)=A(n,:)./temp;
+    d(n,1)=d(n,1)/temp;
+    
+    i=n-1;
+    output(n,1)=d(n,1);
+    while(i>=1)
+        output(i,1)=d(i,1)-(output(i+1,1)*A(i,i+1));
+        i=i-1;
+    end
+end
