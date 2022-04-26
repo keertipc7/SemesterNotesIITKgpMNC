@@ -1,0 +1,4 @@
+youtube playlist:
+https://www.youtube.com/playlist?list=PLBlnK6fEyqRgp46KUv4ZY69yXmpwKOIev
+
+Refer to Chapter 8 from Sipser for space complexity and NP problems. 
